@@ -33,6 +33,7 @@
             this.кафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.предметыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.преподавателиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.графикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialComboBoxDepartment_KPI = new MaterialSkin.Controls.MaterialComboBox();
             this.materialTextBoxDepartmentCode_KPA = new MaterialSkin.Controls.MaterialTextBox();
             this.materialTextBoxDepartmentName_KPA = new MaterialSkin.Controls.MaterialTextBox();
@@ -42,7 +43,6 @@
             this.ColumnClassroom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.графикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.кафедрыToolStripMenuItem.Name = "кафедрыToolStripMenuItem";
             this.кафедрыToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.кафедрыToolStripMenuItem.Text = "Кафедры";
+            this.кафедрыToolStripMenuItem.Click += new System.EventHandler(this.кафедрыToolStripMenuItem_Click);
             // 
             // предметыToolStripMenuItem
             // 
@@ -85,6 +86,12 @@
             this.преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
             this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.преподавателиToolStripMenuItem.Text = "Преподаватели";
+            // 
+            // графикToolStripMenuItem
+            // 
+            this.графикToolStripMenuItem.Name = "графикToolStripMenuItem";
+            this.графикToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.графикToolStripMenuItem.Text = "График";
             // 
             // materialComboBoxDepartment_KPI
             // 
@@ -201,12 +208,6 @@
             this.ColumnSubject.MinimumWidth = 6;
             this.ColumnSubject.Name = "ColumnSubject";
             this.ColumnSubject.Width = 125;
-            // 
-            // графикToolStripMenuItem
-            // 
-            this.графикToolStripMenuItem.Name = "графикToolStripMenuItem";
-            this.графикToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.графикToolStripMenuItem.Text = "График";
             // 
             // MainForm
             // 
