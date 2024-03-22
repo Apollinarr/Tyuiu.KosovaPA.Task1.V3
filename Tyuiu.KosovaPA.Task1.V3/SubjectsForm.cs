@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Tyuiu.KosovaPA.Task1.V3
 {
-    public partial class Form1 : MaterialForm
+    public partial class SubjectsForm : MaterialForm
     {
-        public Form1()
+        public SubjectsForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void SubjectsForm_Load(object sender, EventArgs e)
         {
 
         }

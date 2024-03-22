@@ -18,5 +18,14 @@ namespace Tyuiu.KosovaPA.Task1.V3
             Name = name;
             HeadTeacher = teacher;
         }
+
+        public Department(int code, string name) 
+        {
+            Code = code;
+            Name = name;
+            HeadTeacher = null;
+        }
+
+        public void AppointHeadTeacher(Teacher teacher) => HeadTeacher = teacher;
     }
 }

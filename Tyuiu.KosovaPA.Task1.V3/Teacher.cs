@@ -22,5 +22,18 @@ namespace Tyuiu.KosovaPA.Task1.V3
             Department = department;
             Classroom = classroom;
         }
+
+        public Teacher(string name, string position, int classroom)
+        {
+            Name = name;
+            Position = position;
+            Subject = null;
+            Department = null;
+            Classroom = classroom;
+        }
+
+        public void AppointDepartment(Department department) => Department = department;
+
+        public void AppointSubject(Subject subject) => Subject = subject;
     }
 }
