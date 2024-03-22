@@ -20,5 +20,17 @@ namespace Tyuiu.KosovaPA.Task1.V3
             Hours = hours;
             IsExam = isExam;
         }
+
+        public override string ToString()
+        {
+            if (IsExam)
+            {
+                return Code.ToString() + " " + Name + " " + Hours.ToString() + " " + "Экзамен";
+            }
+            else
+            {
+                return Code.ToString() + " " + Name + " " + Hours.ToString() + " " + "Зачёт";
+            }
+        }
     }
 }
