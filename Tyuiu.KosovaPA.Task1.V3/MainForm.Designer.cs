@@ -1,6 +1,6 @@
 ﻿namespace Tyuiu.KosovaPA.Task1.V3
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -32,6 +32,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.предметыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.преподавателиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialComboBoxDepartment_KPI = new MaterialSkin.Controls.MaterialComboBox();
             this.materialTextBoxDepartmentCode_KPA = new MaterialSkin.Controls.MaterialTextBox();
             this.materialTextBoxDepartmentName_KPA = new MaterialSkin.Controls.MaterialTextBox();
@@ -41,7 +42,7 @@
             this.ColumnClassroom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.преподавателиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.графикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,8 @@
             this.оПрограммеToolStripMenuItem,
             this.кафедрыToolStripMenuItem,
             this.предметыToolStripMenuItem,
-            this.преподавателиToolStripMenuItem});
+            this.преподавателиToolStripMenuItem,
+            this.графикToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1157, 28);
@@ -78,6 +80,12 @@
             this.предметыToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.предметыToolStripMenuItem.Text = "Предметы";
             // 
+            // преподавателиToolStripMenuItem
+            // 
+            this.преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
+            this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.преподавателиToolStripMenuItem.Text = "Преподаватели";
+            // 
             // materialComboBoxDepartment_KPI
             // 
             this.materialComboBoxDepartment_KPI.AutoResize = false;
@@ -87,7 +95,7 @@
             this.materialComboBoxDepartment_KPI.DropDownHeight = 174;
             this.materialComboBoxDepartment_KPI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.materialComboBoxDepartment_KPI.DropDownWidth = 121;
-            this.materialComboBoxDepartment_KPI.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBoxDepartment_KPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialComboBoxDepartment_KPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialComboBoxDepartment_KPI.FormattingEnabled = true;
             this.materialComboBoxDepartment_KPI.IntegralHeight = false;
@@ -194,13 +202,13 @@
             this.ColumnSubject.Name = "ColumnSubject";
             this.ColumnSubject.Width = 125;
             // 
-            // преподавателиToolStripMenuItem
+            // графикToolStripMenuItem
             // 
-            this.преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
-            this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
-            this.преподавателиToolStripMenuItem.Text = "Преподаватели";
+            this.графикToolStripMenuItem.Name = "графикToolStripMenuItem";
+            this.графикToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.графикToolStripMenuItem.Text = "График";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,7 +220,7 @@
             this.Controls.Add(this.materialComboBoxDepartment_KPI);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -238,6 +246,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSubject;
         private System.Windows.Forms.ToolStripMenuItem преподавателиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem графикToolStripMenuItem;
     }
 }
 
