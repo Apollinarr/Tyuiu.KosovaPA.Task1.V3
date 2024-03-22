@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,5 +28,19 @@ namespace Tyuiu.KosovaPA.Task1.V3
         }
 
         public void AppointHeadTeacher(Teacher teacher) => HeadTeacher = teacher;
+
+        public override string ToString()
+        {
+            if (HeadTeacher == null)
+            {
+                return Code.ToString() + " " + Name.ToString() + " " + "-";
+            }
+            else
+            {
+                return Code.ToString() + " " + Name.ToString() + " " + HeadTeacher.Name.ToString();
+            }
+        }
+
+        public bool CompareTo(Department other) => Code == other.Code && Name == other.Name && HeadTeacher == other.HeadTeacher;
     }
 }
