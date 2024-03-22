@@ -28,236 +28,253 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewDepartmnets_KPA = new System.Windows.Forms.DataGridView();
-            this.materialTextBoxCodeDepartment_KPA = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBoxDepartmentName_KPA = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialComboBoxTeachers_KPA = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialButtonAddDepartmnet_KPA = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabelCode_KPA = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabelName_KPA = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabelHeadTeacher_KPA = new MaterialSkin.Controls.MaterialLabel();
-            this.ColumnCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeadTeacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialButtonDelete_KPA = new MaterialSkin.Controls.MaterialButton();
-            this.materialButtonEdit_KPA = new MaterialSkin.Controls.MaterialButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDepartmnets_KPA)).BeginInit();
-            this.SuspendLayout();
+            dataGridViewDepartmnets_KPA = new System.Windows.Forms.DataGridView();
+            ColumnCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            HeadTeacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            materialTextBoxCodeDepartment_KPA = new MaterialSkin.Controls.MaterialTextBox();
+            materialTextBoxDepartmentName_KPA = new MaterialSkin.Controls.MaterialTextBox();
+            materialComboBoxTeachers_KPA = new MaterialSkin.Controls.MaterialComboBox();
+            materialButtonAddDepartmnet_KPA = new MaterialSkin.Controls.MaterialButton();
+            materialLabelCode_KPA = new MaterialSkin.Controls.MaterialLabel();
+            materialLabelName_KPA = new MaterialSkin.Controls.MaterialLabel();
+            materialLabelHeadTeacher_KPA = new MaterialSkin.Controls.MaterialLabel();
+            materialButtonDelete_KPA = new MaterialSkin.Controls.MaterialButton();
+            materialButtonEdit_KPA = new MaterialSkin.Controls.MaterialButton();
+            materialLabelDepCount_KPA = new MaterialSkin.Controls.MaterialLabel();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDepartmnets_KPA).BeginInit();
+            SuspendLayout();
             // 
             // dataGridViewDepartmnets_KPA
             // 
-            this.dataGridViewDepartmnets_KPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDepartmnets_KPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnCode,
-            this.ColumnName,
-            this.HeadTeacher});
-            this.dataGridViewDepartmnets_KPA.Location = new System.Drawing.Point(42, 109);
-            this.dataGridViewDepartmnets_KPA.Name = "dataGridViewDepartmnets_KPA";
-            this.dataGridViewDepartmnets_KPA.RowHeadersWidth = 51;
-            this.dataGridViewDepartmnets_KPA.RowTemplate.Height = 24;
-            this.dataGridViewDepartmnets_KPA.Size = new System.Drawing.Size(563, 313);
-            this.dataGridViewDepartmnets_KPA.TabIndex = 0;
-            this.dataGridViewDepartmnets_KPA.Click += new System.EventHandler(this.dataGridViewDepartmnets_KPA_Click);
-            // 
-            // materialTextBoxCodeDepartment_KPA
-            // 
-            this.materialTextBoxCodeDepartment_KPA.AnimateReadOnly = false;
-            this.materialTextBoxCodeDepartment_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBoxCodeDepartment_KPA.Depth = 0;
-            this.materialTextBoxCodeDepartment_KPA.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBoxCodeDepartment_KPA.LeadingIcon = null;
-            this.materialTextBoxCodeDepartment_KPA.Location = new System.Drawing.Point(788, 109);
-            this.materialTextBoxCodeDepartment_KPA.MaxLength = 20;
-            this.materialTextBoxCodeDepartment_KPA.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBoxCodeDepartment_KPA.Multiline = false;
-            this.materialTextBoxCodeDepartment_KPA.Name = "materialTextBoxCodeDepartment_KPA";
-            this.materialTextBoxCodeDepartment_KPA.Size = new System.Drawing.Size(240, 50);
-            this.materialTextBoxCodeDepartment_KPA.TabIndex = 1;
-            this.materialTextBoxCodeDepartment_KPA.Text = "";
-            this.materialTextBoxCodeDepartment_KPA.TrailingIcon = null;
-            this.materialTextBoxCodeDepartment_KPA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBoxCodeDepartment_KPA_KeyPress);
-            // 
-            // materialTextBoxDepartmentName_KPA
-            // 
-            this.materialTextBoxDepartmentName_KPA.AnimateReadOnly = false;
-            this.materialTextBoxDepartmentName_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBoxDepartmentName_KPA.Depth = 0;
-            this.materialTextBoxDepartmentName_KPA.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBoxDepartmentName_KPA.LeadingIcon = null;
-            this.materialTextBoxDepartmentName_KPA.Location = new System.Drawing.Point(788, 208);
-            this.materialTextBoxDepartmentName_KPA.MaxLength = 50;
-            this.materialTextBoxDepartmentName_KPA.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBoxDepartmentName_KPA.Multiline = false;
-            this.materialTextBoxDepartmentName_KPA.Name = "materialTextBoxDepartmentName_KPA";
-            this.materialTextBoxDepartmentName_KPA.Size = new System.Drawing.Size(240, 50);
-            this.materialTextBoxDepartmentName_KPA.TabIndex = 2;
-            this.materialTextBoxDepartmentName_KPA.Text = "";
-            this.materialTextBoxDepartmentName_KPA.TrailingIcon = null;
-            this.materialTextBoxDepartmentName_KPA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBoxDepartmentName_KPA_KeyPress);
-            // 
-            // materialComboBoxTeachers_KPA
-            // 
-            this.materialComboBoxTeachers_KPA.AutoResize = false;
-            this.materialComboBoxTeachers_KPA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBoxTeachers_KPA.Depth = 0;
-            this.materialComboBoxTeachers_KPA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBoxTeachers_KPA.DropDownHeight = 174;
-            this.materialComboBoxTeachers_KPA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBoxTeachers_KPA.DropDownWidth = 121;
-            this.materialComboBoxTeachers_KPA.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBoxTeachers_KPA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBoxTeachers_KPA.FormattingEnabled = true;
-            this.materialComboBoxTeachers_KPA.IntegralHeight = false;
-            this.materialComboBoxTeachers_KPA.ItemHeight = 43;
-            this.materialComboBoxTeachers_KPA.Location = new System.Drawing.Point(788, 316);
-            this.materialComboBoxTeachers_KPA.MaxDropDownItems = 4;
-            this.materialComboBoxTeachers_KPA.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBoxTeachers_KPA.Name = "materialComboBoxTeachers_KPA";
-            this.materialComboBoxTeachers_KPA.Size = new System.Drawing.Size(240, 49);
-            this.materialComboBoxTeachers_KPA.StartIndex = 0;
-            this.materialComboBoxTeachers_KPA.TabIndex = 3;
-            // 
-            // materialButtonAddDepartmnet_KPA
-            // 
-            this.materialButtonAddDepartmnet_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonAddDepartmnet_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonAddDepartmnet_KPA.Depth = 0;
-            this.materialButtonAddDepartmnet_KPA.HighEmphasis = true;
-            this.materialButtonAddDepartmnet_KPA.Icon = null;
-            this.materialButtonAddDepartmnet_KPA.Location = new System.Drawing.Point(376, 471);
-            this.materialButtonAddDepartmnet_KPA.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButtonAddDepartmnet_KPA.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonAddDepartmnet_KPA.Name = "materialButtonAddDepartmnet_KPA";
-            this.materialButtonAddDepartmnet_KPA.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonAddDepartmnet_KPA.Size = new System.Drawing.Size(100, 36);
-            this.materialButtonAddDepartmnet_KPA.TabIndex = 4;
-            this.materialButtonAddDepartmnet_KPA.Text = "добавить";
-            this.materialButtonAddDepartmnet_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonAddDepartmnet_KPA.UseAccentColor = false;
-            this.materialButtonAddDepartmnet_KPA.UseVisualStyleBackColor = true;
-            this.materialButtonAddDepartmnet_KPA.Click += new System.EventHandler(this.materialButtonAddDepartmnet_KPA_Click);
-            // 
-            // materialLabelCode_KPA
-            // 
-            this.materialLabelCode_KPA.AutoSize = true;
-            this.materialLabelCode_KPA.Depth = 0;
-            this.materialLabelCode_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelCode_KPA.Location = new System.Drawing.Point(650, 120);
-            this.materialLabelCode_KPA.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabelCode_KPA.Name = "materialLabelCode_KPA";
-            this.materialLabelCode_KPA.Size = new System.Drawing.Size(30, 19);
-            this.materialLabelCode_KPA.TabIndex = 5;
-            this.materialLabelCode_KPA.Text = "Код";
-            // 
-            // materialLabelName_KPA
-            // 
-            this.materialLabelName_KPA.AutoSize = true;
-            this.materialLabelName_KPA.Depth = 0;
-            this.materialLabelName_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelName_KPA.Location = new System.Drawing.Point(650, 224);
-            this.materialLabelName_KPA.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabelName_KPA.Name = "materialLabelName_KPA";
-            this.materialLabelName_KPA.Size = new System.Drawing.Size(73, 19);
-            this.materialLabelName_KPA.TabIndex = 6;
-            this.materialLabelName_KPA.Text = "Название";
-            // 
-            // materialLabelHeadTeacher_KPA
-            // 
-            this.materialLabelHeadTeacher_KPA.AutoSize = true;
-            this.materialLabelHeadTeacher_KPA.Depth = 0;
-            this.materialLabelHeadTeacher_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelHeadTeacher_KPA.Location = new System.Drawing.Point(650, 335);
-            this.materialLabelHeadTeacher_KPA.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabelHeadTeacher_KPA.Name = "materialLabelHeadTeacher_KPA";
-            this.materialLabelHeadTeacher_KPA.Size = new System.Drawing.Size(99, 19);
-            this.materialLabelHeadTeacher_KPA.TabIndex = 7;
-            this.materialLabelHeadTeacher_KPA.Text = "Заведующий";
+            dataGridViewDepartmnets_KPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewDepartmnets_KPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColumnCode, ColumnName, HeadTeacher });
+            dataGridViewDepartmnets_KPA.Location = new System.Drawing.Point(42, 136);
+            dataGridViewDepartmnets_KPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            dataGridViewDepartmnets_KPA.Name = "dataGridViewDepartmnets_KPA";
+            dataGridViewDepartmnets_KPA.RowHeadersWidth = 51;
+            dataGridViewDepartmnets_KPA.RowTemplate.Height = 24;
+            dataGridViewDepartmnets_KPA.Size = new System.Drawing.Size(563, 391);
+            dataGridViewDepartmnets_KPA.TabIndex = 0;
+            dataGridViewDepartmnets_KPA.Click += dataGridViewDepartmnets_KPA_Click;
             // 
             // ColumnCode
             // 
-            this.ColumnCode.HeaderText = "Код";
-            this.ColumnCode.MinimumWidth = 6;
-            this.ColumnCode.Name = "ColumnCode";
-            this.ColumnCode.ReadOnly = true;
-            this.ColumnCode.Width = 125;
+            ColumnCode.HeaderText = "Код";
+            ColumnCode.MinimumWidth = 6;
+            ColumnCode.Name = "ColumnCode";
+            ColumnCode.ReadOnly = true;
+            ColumnCode.Width = 125;
             // 
             // ColumnName
             // 
-            this.ColumnName.HeaderText = "Название";
-            this.ColumnName.MinimumWidth = 6;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 125;
+            ColumnName.HeaderText = "Название";
+            ColumnName.MinimumWidth = 6;
+            ColumnName.Name = "ColumnName";
+            ColumnName.ReadOnly = true;
+            ColumnName.Width = 125;
             // 
             // HeadTeacher
             // 
-            this.HeadTeacher.HeaderText = "Заведующий";
-            this.HeadTeacher.MinimumWidth = 6;
-            this.HeadTeacher.Name = "HeadTeacher";
-            this.HeadTeacher.ReadOnly = true;
-            this.HeadTeacher.Width = 125;
+            HeadTeacher.HeaderText = "Заведующий";
+            HeadTeacher.MinimumWidth = 6;
+            HeadTeacher.Name = "HeadTeacher";
+            HeadTeacher.ReadOnly = true;
+            HeadTeacher.Width = 125;
+            // 
+            // materialTextBoxCodeDepartment_KPA
+            // 
+            materialTextBoxCodeDepartment_KPA.AnimateReadOnly = false;
+            materialTextBoxCodeDepartment_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            materialTextBoxCodeDepartment_KPA.Depth = 0;
+            materialTextBoxCodeDepartment_KPA.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            materialTextBoxCodeDepartment_KPA.LeadingIcon = null;
+            materialTextBoxCodeDepartment_KPA.Location = new System.Drawing.Point(788, 136);
+            materialTextBoxCodeDepartment_KPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            materialTextBoxCodeDepartment_KPA.MaxLength = 20;
+            materialTextBoxCodeDepartment_KPA.MouseState = MaterialSkin.MouseState.OUT;
+            materialTextBoxCodeDepartment_KPA.Multiline = false;
+            materialTextBoxCodeDepartment_KPA.Name = "materialTextBoxCodeDepartment_KPA";
+            materialTextBoxCodeDepartment_KPA.Size = new System.Drawing.Size(240, 50);
+            materialTextBoxCodeDepartment_KPA.TabIndex = 1;
+            materialTextBoxCodeDepartment_KPA.Text = "";
+            materialTextBoxCodeDepartment_KPA.TrailingIcon = null;
+            materialTextBoxCodeDepartment_KPA.KeyPress += materialTextBoxCodeDepartment_KPA_KeyPress;
+            // 
+            // materialTextBoxDepartmentName_KPA
+            // 
+            materialTextBoxDepartmentName_KPA.AnimateReadOnly = false;
+            materialTextBoxDepartmentName_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            materialTextBoxDepartmentName_KPA.Depth = 0;
+            materialTextBoxDepartmentName_KPA.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            materialTextBoxDepartmentName_KPA.LeadingIcon = null;
+            materialTextBoxDepartmentName_KPA.Location = new System.Drawing.Point(788, 260);
+            materialTextBoxDepartmentName_KPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            materialTextBoxDepartmentName_KPA.MaxLength = 50;
+            materialTextBoxDepartmentName_KPA.MouseState = MaterialSkin.MouseState.OUT;
+            materialTextBoxDepartmentName_KPA.Multiline = false;
+            materialTextBoxDepartmentName_KPA.Name = "materialTextBoxDepartmentName_KPA";
+            materialTextBoxDepartmentName_KPA.Size = new System.Drawing.Size(240, 50);
+            materialTextBoxDepartmentName_KPA.TabIndex = 2;
+            materialTextBoxDepartmentName_KPA.Text = "";
+            materialTextBoxDepartmentName_KPA.TrailingIcon = null;
+            materialTextBoxDepartmentName_KPA.KeyPress += materialTextBoxDepartmentName_KPA_KeyPress;
+            // 
+            // materialComboBoxTeachers_KPA
+            // 
+            materialComboBoxTeachers_KPA.AutoResize = false;
+            materialComboBoxTeachers_KPA.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            materialComboBoxTeachers_KPA.Depth = 0;
+            materialComboBoxTeachers_KPA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            materialComboBoxTeachers_KPA.DropDownHeight = 174;
+            materialComboBoxTeachers_KPA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            materialComboBoxTeachers_KPA.DropDownWidth = 121;
+            materialComboBoxTeachers_KPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            materialComboBoxTeachers_KPA.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
+            materialComboBoxTeachers_KPA.FormattingEnabled = true;
+            materialComboBoxTeachers_KPA.IntegralHeight = false;
+            materialComboBoxTeachers_KPA.ItemHeight = 43;
+            materialComboBoxTeachers_KPA.Location = new System.Drawing.Point(788, 395);
+            materialComboBoxTeachers_KPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            materialComboBoxTeachers_KPA.MaxDropDownItems = 4;
+            materialComboBoxTeachers_KPA.MouseState = MaterialSkin.MouseState.OUT;
+            materialComboBoxTeachers_KPA.Name = "materialComboBoxTeachers_KPA";
+            materialComboBoxTeachers_KPA.Size = new System.Drawing.Size(240, 49);
+            materialComboBoxTeachers_KPA.StartIndex = 0;
+            materialComboBoxTeachers_KPA.TabIndex = 3;
+            // 
+            // materialButtonAddDepartmnet_KPA
+            // 
+            materialButtonAddDepartmnet_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            materialButtonAddDepartmnet_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButtonAddDepartmnet_KPA.Depth = 0;
+            materialButtonAddDepartmnet_KPA.HighEmphasis = true;
+            materialButtonAddDepartmnet_KPA.Icon = null;
+            materialButtonAddDepartmnet_KPA.Location = new System.Drawing.Point(376, 589);
+            materialButtonAddDepartmnet_KPA.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            materialButtonAddDepartmnet_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButtonAddDepartmnet_KPA.Name = "materialButtonAddDepartmnet_KPA";
+            materialButtonAddDepartmnet_KPA.NoAccentTextColor = System.Drawing.Color.Empty;
+            materialButtonAddDepartmnet_KPA.Size = new System.Drawing.Size(100, 36);
+            materialButtonAddDepartmnet_KPA.TabIndex = 4;
+            materialButtonAddDepartmnet_KPA.Text = "добавить";
+            materialButtonAddDepartmnet_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButtonAddDepartmnet_KPA.UseAccentColor = false;
+            materialButtonAddDepartmnet_KPA.UseVisualStyleBackColor = true;
+            materialButtonAddDepartmnet_KPA.Click += materialButtonAddDepartmnet_KPA_Click;
+            // 
+            // materialLabelCode_KPA
+            // 
+            materialLabelCode_KPA.AutoSize = true;
+            materialLabelCode_KPA.Depth = 0;
+            materialLabelCode_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            materialLabelCode_KPA.Location = new System.Drawing.Point(650, 150);
+            materialLabelCode_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabelCode_KPA.Name = "materialLabelCode_KPA";
+            materialLabelCode_KPA.Size = new System.Drawing.Size(30, 19);
+            materialLabelCode_KPA.TabIndex = 5;
+            materialLabelCode_KPA.Text = "Код";
+            // 
+            // materialLabelName_KPA
+            // 
+            materialLabelName_KPA.AutoSize = true;
+            materialLabelName_KPA.Depth = 0;
+            materialLabelName_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            materialLabelName_KPA.Location = new System.Drawing.Point(650, 280);
+            materialLabelName_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabelName_KPA.Name = "materialLabelName_KPA";
+            materialLabelName_KPA.Size = new System.Drawing.Size(73, 19);
+            materialLabelName_KPA.TabIndex = 6;
+            materialLabelName_KPA.Text = "Название";
+            // 
+            // materialLabelHeadTeacher_KPA
+            // 
+            materialLabelHeadTeacher_KPA.AutoSize = true;
+            materialLabelHeadTeacher_KPA.Depth = 0;
+            materialLabelHeadTeacher_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            materialLabelHeadTeacher_KPA.Location = new System.Drawing.Point(650, 419);
+            materialLabelHeadTeacher_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabelHeadTeacher_KPA.Name = "materialLabelHeadTeacher_KPA";
+            materialLabelHeadTeacher_KPA.Size = new System.Drawing.Size(99, 19);
+            materialLabelHeadTeacher_KPA.TabIndex = 7;
+            materialLabelHeadTeacher_KPA.Text = "Заведующий";
             // 
             // materialButtonDelete_KPA
             // 
-            this.materialButtonDelete_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonDelete_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonDelete_KPA.Depth = 0;
-            this.materialButtonDelete_KPA.HighEmphasis = true;
-            this.materialButtonDelete_KPA.Icon = null;
-            this.materialButtonDelete_KPA.Location = new System.Drawing.Point(514, 471);
-            this.materialButtonDelete_KPA.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButtonDelete_KPA.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonDelete_KPA.Name = "materialButtonDelete_KPA";
-            this.materialButtonDelete_KPA.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonDelete_KPA.Size = new System.Drawing.Size(91, 36);
-            this.materialButtonDelete_KPA.TabIndex = 8;
-            this.materialButtonDelete_KPA.Text = "Удалить";
-            this.materialButtonDelete_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonDelete_KPA.UseAccentColor = false;
-            this.materialButtonDelete_KPA.UseVisualStyleBackColor = true;
+            materialButtonDelete_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            materialButtonDelete_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButtonDelete_KPA.Depth = 0;
+            materialButtonDelete_KPA.HighEmphasis = true;
+            materialButtonDelete_KPA.Icon = null;
+            materialButtonDelete_KPA.Location = new System.Drawing.Point(514, 589);
+            materialButtonDelete_KPA.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            materialButtonDelete_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButtonDelete_KPA.Name = "materialButtonDelete_KPA";
+            materialButtonDelete_KPA.NoAccentTextColor = System.Drawing.Color.Empty;
+            materialButtonDelete_KPA.Size = new System.Drawing.Size(91, 36);
+            materialButtonDelete_KPA.TabIndex = 8;
+            materialButtonDelete_KPA.Text = "Удалить";
+            materialButtonDelete_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButtonDelete_KPA.UseAccentColor = false;
+            materialButtonDelete_KPA.UseVisualStyleBackColor = true;
+            materialButtonDelete_KPA.Click += materialButtonDelete_KPA_Click;
             // 
             // materialButtonEdit_KPA
             // 
-            this.materialButtonEdit_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonEdit_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonEdit_KPA.Depth = 0;
-            this.materialButtonEdit_KPA.HighEmphasis = true;
-            this.materialButtonEdit_KPA.Icon = null;
-            this.materialButtonEdit_KPA.Location = new System.Drawing.Point(42, 471);
-            this.materialButtonEdit_KPA.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButtonEdit_KPA.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonEdit_KPA.Name = "materialButtonEdit_KPA";
-            this.materialButtonEdit_KPA.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonEdit_KPA.Size = new System.Drawing.Size(146, 36);
-            this.materialButtonEdit_KPA.TabIndex = 9;
-            this.materialButtonEdit_KPA.Text = "Редактировать";
-            this.materialButtonEdit_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonEdit_KPA.UseAccentColor = false;
-            this.materialButtonEdit_KPA.UseVisualStyleBackColor = true;
-            this.materialButtonEdit_KPA.Click += new System.EventHandler(this.materialButtonEdit_KPA_Click);
+            materialButtonEdit_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            materialButtonEdit_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButtonEdit_KPA.Depth = 0;
+            materialButtonEdit_KPA.HighEmphasis = true;
+            materialButtonEdit_KPA.Icon = null;
+            materialButtonEdit_KPA.Location = new System.Drawing.Point(42, 589);
+            materialButtonEdit_KPA.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            materialButtonEdit_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialButtonEdit_KPA.Name = "materialButtonEdit_KPA";
+            materialButtonEdit_KPA.NoAccentTextColor = System.Drawing.Color.Empty;
+            materialButtonEdit_KPA.Size = new System.Drawing.Size(146, 36);
+            materialButtonEdit_KPA.TabIndex = 9;
+            materialButtonEdit_KPA.Text = "Редактировать";
+            materialButtonEdit_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButtonEdit_KPA.UseAccentColor = false;
+            materialButtonEdit_KPA.UseVisualStyleBackColor = true;
+            materialButtonEdit_KPA.Click += materialButtonEdit_KPA_Click;
+            // 
+            // materialLabelDepCount_KPA
+            // 
+            materialLabelDepCount_KPA.AutoSize = true;
+            materialLabelDepCount_KPA.Depth = 0;
+            materialLabelDepCount_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            materialLabelDepCount_KPA.Location = new System.Drawing.Point(42, 102);
+            materialLabelDepCount_KPA.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabelDepCount_KPA.Name = "materialLabelDepCount_KPA";
+            materialLabelDepCount_KPA.Size = new System.Drawing.Size(97, 19);
+            materialLabelDepCount_KPA.TabIndex = 10;
+            materialLabelDepCount_KPA.Text = "Количество: ";
             // 
             // DepartmentsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 564);
-            this.Controls.Add(this.materialButtonEdit_KPA);
-            this.Controls.Add(this.materialButtonDelete_KPA);
-            this.Controls.Add(this.materialLabelHeadTeacher_KPA);
-            this.Controls.Add(this.materialLabelName_KPA);
-            this.Controls.Add(this.materialLabelCode_KPA);
-            this.Controls.Add(this.materialButtonAddDepartmnet_KPA);
-            this.Controls.Add(this.materialComboBoxTeachers_KPA);
-            this.Controls.Add(this.materialTextBoxDepartmentName_KPA);
-            this.Controls.Add(this.materialTextBoxCodeDepartment_KPA);
-            this.Controls.Add(this.dataGridViewDepartmnets_KPA);
-            this.Name = "DepartmentsForm";
-            this.Text = "Кафедры";
-            this.Load += new System.EventHandler(this.DepartmentsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDepartmnets_KPA)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1054, 705);
+            Controls.Add(materialLabelDepCount_KPA);
+            Controls.Add(materialButtonEdit_KPA);
+            Controls.Add(materialButtonDelete_KPA);
+            Controls.Add(materialLabelHeadTeacher_KPA);
+            Controls.Add(materialLabelName_KPA);
+            Controls.Add(materialLabelCode_KPA);
+            Controls.Add(materialButtonAddDepartmnet_KPA);
+            Controls.Add(materialComboBoxTeachers_KPA);
+            Controls.Add(materialTextBoxDepartmentName_KPA);
+            Controls.Add(materialTextBoxCodeDepartment_KPA);
+            Controls.Add(dataGridViewDepartmnets_KPA);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "DepartmentsForm";
+            Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
+            Text = "Кафедры";
+            Load += DepartmentsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDepartmnets_KPA).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -275,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HeadTeacher;
         private MaterialSkin.Controls.MaterialButton materialButtonDelete_KPA;
         private MaterialSkin.Controls.MaterialButton materialButtonEdit_KPA;
+        private MaterialSkin.Controls.MaterialLabel materialLabelDepCount_KPA;
     }
 }

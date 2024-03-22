@@ -20,6 +20,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
         public DepartmentsForm()
         {
             InitializeComponent();
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 dataGridViewDepartmnets_KPA.Rows.Add(line[0], line[1], line[2]);
             }
 
+            materialLabelDepCount_KPA.Text = "Количество: " + departments.Count();
             teachers = new List<Teacher>();
         }
 
@@ -71,6 +73,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                             }
                         }
                     }
+                    departments.Add(department);
 
                     using (var streamWriter = new StreamWriter(@"Departments.csv", true, Encoding.GetEncoding(1251)))
                     {
@@ -80,6 +83,8 @@ namespace Tyuiu.KosovaPA.Task1.V3
                     dataGridViewDepartmnets_KPA.Rows.Add(department.ToString().Split(' '));
 
                     CleareAllFields();
+
+                    materialLabelDepCount_KPA.Text = "Количество: " + departments.Count();
                 }
                 catch (Exception ex)
                 {
@@ -189,23 +194,27 @@ namespace Tyuiu.KosovaPA.Task1.V3
                             }
                         }
                     }
+                    departments.Add(newDepartment);
 
                     using (var streamWriter = new StreamWriter(@"Departments.csv", false, Encoding.GetEncoding(1251)))
                     {
-                        streamWriter.WriteLine(department.ToString());
+                        foreach (var dep in departments)
+                        {
+                            streamWriter.WriteLine(dep.ToString());
+                        }
                     }
 
                     dataGridViewDepartmnets_KPA.CurrentRow.Cells[0].Value = materialTextBoxCodeDepartment_KPA.Text;
                     dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value = materialTextBoxDepartmentName_KPA.Text;
 
-                    if (newDepartment.HeadTeacher.Name is null)
+                    if (newDepartment.HeadTeacher is null)
                     {
-                        dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value = "-";
-                        
+                        dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value = "-";
+
                     }
                     else
                     {
-                        dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value = newDepartment.HeadTeacher.Name.ToString();
+                        dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value = newDepartment.HeadTeacher.Name.ToString();
                     }
 
                     CleareAllFields();
@@ -217,6 +226,52 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void materialButtonDelete_KPA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department department = new Department(Convert.ToInt32(dataGridViewDepartmnets_KPA.CurrentRow.Cells[0].Value), dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value.ToString());
+                if (dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value.ToString() != "-")
+                {
+                    foreach (var teacher in teachers)
+                    {
+                        if (teacher.Name == dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value.ToString())
+                        {
+                            department.AppointHeadTeacher(teacher);
+                            break;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < departments.Count; i++)
+                {
+                    if (departments[i].CompareTo(department))
+                    {
+                        departments.RemoveAt(i);
+                        break;
+                    }
+                }
+
+                dataGridViewDepartmnets_KPA.Rows.RemoveAt(dataGridViewDepartmnets_KPA.CurrentRow.Index);
+
+                using (var streamWriter = new StreamWriter(@"Departments.csv", false, Encoding.GetEncoding(1251)))
+                {
+                    foreach (var dep in departments)
+                    {
+                        streamWriter.WriteLine(dep.ToString());
+                    }
+                }
+
+                CleareAllFields();
+
+                materialLabelDepCount_KPA.Text = "Количество: " + departments.Count();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
