@@ -42,6 +42,8 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 }
                 Subject subject = new Subject(Convert.ToInt32(line[0]), line[1], Convert.ToInt32(line[2]), isExam);
 
+                subjects.Add(subject);
+
                 dataGridViewSubjects_KPA.Rows.Add(subject.ToString().Split(' '));
             }
 
@@ -153,6 +155,96 @@ namespace Tyuiu.KosovaPA.Task1.V3
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void materialButtonEditSubject_KPA_Click(object sender, EventArgs e)
+        {
+            if (CheckName() && CheckCode() && CheckHours() && CheckIsExam())
+            {
+                try
+                {
+                    bool isExam;
+                    if (dataGridViewSubjects_KPA.CurrentRow.Cells[3].Value.ToString() == "Экзамен")
+                    {
+                        isExam = true;
+                    }
+                    else
+                    {
+                        isExam = false;
+                    }
+                    Subject subject = new Subject(Convert.ToInt32(dataGridViewSubjects_KPA.CurrentRow.Cells[0].Value),
+                        dataGridViewSubjects_KPA.CurrentRow.Cells[1].Value.ToString(),
+                        Convert.ToInt32(dataGridViewSubjects_KPA.CurrentRow.Cells[2].Value), isExam);
+                    subjects.Remove(subject);
+
+                    if (materialComboBoxIsExamSubject_KPA.SelectedIndex == 0)
+                    {
+                        isExam = true;
+                    }
+                    else
+                    {
+                        isExam = false;
+                    }
+                    Subject newSubject = new Subject(Convert.ToInt32(materialTextBoxCodeSubject_KPA.Text),
+                        materialTextBoxNameSubject_KPA.Text, Convert.ToInt32(materialTextBoxHoursSubject_KPA.Text), isExam);
+                    subjects.Add(newSubject);
+                    dataGridViewSubjects_KPA.CurrentRow.SetValues(newSubject.ToString().Split(' '));
+
+                    using (var streamWriter = new StreamWriter(@"Subjects.csv", false, Encoding.GetEncoding(1251)))
+                    {
+                        foreach (var sub in subjects)
+                        {
+                            streamWriter.WriteLine(sub.ToString());
+                        }
+                    }
+
+                    ClearAllFields();
+
+                    materialButtonEditSubject_KPA.Enabled = false;
+                    materialButtonDeleteSubject_KPA.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void materialButtonDeleteSubject_KPA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isExam;
+                if (dataGridViewSubjects_KPA.CurrentRow.Cells[3].Value.ToString() == "Экзамен")
+                {
+                    isExam = true;
+                }
+                else
+                {
+                    isExam = false;
+                }
+                Subject subject = new Subject(Convert.ToInt32(dataGridViewSubjects_KPA.CurrentRow.Cells[0].Value),
+                    dataGridViewSubjects_KPA.CurrentRow.Cells[1].Value.ToString(),
+                    Convert.ToInt32(dataGridViewSubjects_KPA.CurrentRow.Cells[2].Value), isExam);
+                subjects.Remove(subject);
+                dataGridViewSubjects_KPA.Rows.RemoveAt(dataGridViewSubjects_KPA.CurrentRow.Index);
+                using (var streamWriter = new StreamWriter(@"Subjects.csv", false, Encoding.GetEncoding(1251)))
+                {
+                    foreach (var sub in subjects)
+                    {
+                        streamWriter.WriteLine(sub.ToString());
+                    }
+                }
+                ClearAllFields();
+                materialLabelCount_KPA.Text = "Количество: " + subjects.Count;
+                materialButtonEditSubject_KPA.Enabled = false;
+                materialButtonDeleteSubject_KPA.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

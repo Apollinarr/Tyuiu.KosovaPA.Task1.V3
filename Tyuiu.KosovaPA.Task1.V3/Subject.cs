@@ -32,5 +32,10 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 return Code.ToString() + " " + Name + " " + Hours.ToString() + " " + "Зачёт";
             }
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Subject && Code == ((Subject)obj).Code && Name == ((Subject)obj).Name && Hours == ((Subject)obj).Hours && IsExam == ((Subject)obj).IsExam;
+        }
     }
 }

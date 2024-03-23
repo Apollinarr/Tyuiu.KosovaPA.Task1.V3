@@ -266,6 +266,7 @@
             materialButtonDeleteSubject_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButtonDeleteSubject_KPA.UseAccentColor = false;
             materialButtonDeleteSubject_KPA.UseVisualStyleBackColor = true;
+            materialButtonDeleteSubject_KPA.Click += materialButtonDeleteSubject_KPA_Click;
             // 
             // materialButtonEditSubject_KPA
             // 
@@ -285,6 +286,7 @@
             materialButtonEditSubject_KPA.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButtonEditSubject_KPA.UseAccentColor = false;
             materialButtonEditSubject_KPA.UseVisualStyleBackColor = true;
+            materialButtonEditSubject_KPA.Click += materialButtonEditSubject_KPA_Click;
             // 
             // SubjectsForm
             // 
