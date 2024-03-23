@@ -82,7 +82,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
                     dataGridViewDepartmnets_KPA.Rows.Add(department.ToString().Split(' '));
 
-                    CleareAllFields();
+                    ClearAllFields();
 
                     materialLabelDepCount_KPA.Text = "Количество: " + departments.Count();
                 }
@@ -126,7 +126,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 materialButtonEdit_KPA.Enabled = false;
                 materialButtonDelete_KPA.Enabled = false;
 
-                CleareAllFields();
+                ClearAllFields();
             }
             else
             {
@@ -147,7 +147,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
             }
         }
 
-        private void CleareAllFields()
+        private void ClearAllFields()
         {
             materialTextBoxCodeDepartment_KPA.Clear();
             materialTextBoxDepartmentName_KPA.Clear();
@@ -217,7 +217,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                         dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value = newDepartment.HeadTeacher.Name.ToString();
                     }
 
-                    CleareAllFields();
+                    ClearAllFields();
 
                     materialButtonEdit_KPA.Enabled = false;
                     materialButtonDelete_KPA.Enabled = false;
@@ -265,7 +265,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                     }
                 }
 
-                CleareAllFields();
+                ClearAllFields();
 
                 materialLabelDepCount_KPA.Text = "Количество: " + departments.Count();
             }

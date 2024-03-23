@@ -95,5 +95,11 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 }
             }
         }
+
+        private void предметыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form subjectsForm = new SubjectsForm();
+            subjectsForm.ShowDialog();
+        }
     }
 }

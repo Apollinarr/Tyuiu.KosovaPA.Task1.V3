@@ -91,7 +91,7 @@
             materialTextBoxCodeDepartment_KPA.LeadingIcon = null;
             materialTextBoxCodeDepartment_KPA.Location = new System.Drawing.Point(788, 136);
             materialTextBoxCodeDepartment_KPA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            materialTextBoxCodeDepartment_KPA.MaxLength = 20;
+            materialTextBoxCodeDepartment_KPA.MaxLength = 5;
             materialTextBoxCodeDepartment_KPA.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBoxCodeDepartment_KPA.Multiline = false;
             materialTextBoxCodeDepartment_KPA.Name = "materialTextBoxCodeDepartment_KPA";
