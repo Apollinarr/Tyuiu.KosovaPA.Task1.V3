@@ -28,7 +28,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
             materialButtonDeleteSubject_KPA.Enabled = false;
             materialComboBoxIsExamSubject_KPA.SelectedIndex = -1;
 
-            List<string[]> lines = File.ReadAllLines("Subjects.csv", Encoding.GetEncoding(1251)).Select(d => d.Split(' ')).ToList();
+            List<string[]> lines = File.ReadAllLines("Subjects.csv", Encoding.GetEncoding(1251)).Select(s => s.Split(' ')).ToList();
             foreach (var line in lines)
             {
                 bool isExam;
@@ -47,7 +47,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 dataGridViewSubjects_KPA.Rows.Add(subject.ToString().Split(' '));
             }
 
-            materialLabelCount_KPA.Text = "Количество" + subjects.Count;
+            materialLabelCount_KPA.Text = "Количество: " + subjects.Count;
         }
 
         private void materialButtonAddSubject_KPA_Click(object sender, EventArgs e)
