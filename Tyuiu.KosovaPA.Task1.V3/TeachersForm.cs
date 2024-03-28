@@ -17,49 +17,12 @@ namespace Tyuiu.KosovaPA.Task1.V3
         List<Teacher> teachers = new List<Teacher>();
         List<Department> departments = new List<Department>();
         List<Subject> subjects = new List<Subject>();
-        public TeachersForm()
+        public TeachersForm(List<Teacher> teachers, List<Department> departments, List<Subject> subjects)
         {
             InitializeComponent();
-            List<string[]> lines = File.ReadAllLines("Subjects.csv", Encoding.GetEncoding(1251)).Select(s => s.Split(' ')).ToList();
-            foreach (var line in lines)
-            {
-                bool isExam;
-                if (line[3] == "Экзамен")
-                {
-                    isExam = true;
-                }
-                else
-                {
-                    isExam = false;
-                }
-                Subject subject = new Subject(Convert.ToInt32(line[0]), line[1], Convert.ToInt32(line[2]), isExam);
-
-                subjects.Add(subject);
-                materialComboBoxTeacherSubject_KPA.Items.Add(subject.Name);
-            }
-
-            List<string[]> linesDep = File.ReadAllLines("Departments.csv", Encoding.GetEncoding(1251)).Select(d => d.Split(' ')).ToList();
-            foreach (var line in linesDep)
-            {
-                if (line[2] == "-")
-                {
-                    Department departmnet = new Department(Convert.ToInt32(line[0]), line[1]);
-                    departments.Add(departmnet);
-                    materialComboBoxTeacherDepartment_KPA.Items.Add(departmnet.Name);
-                }
-                else
-                {
-                    foreach (var teacher in teachers)
-                    {
-                        if (teacher.Name == line[2])
-                        {
-                            Department departmnet = new Department(Convert.ToInt32(line[0]), line[1], teacher);
-                            departments.Add(departmnet);
-                            materialComboBoxTeacherDepartment_KPA.Items.Add(departmnet.Name);
-                        }
-                    }
-                }
-            }
+            this.departments = departments;
+            this.subjects = subjects;
+            this.teachers = teachers;
         }
 
         private void TeachersForm_Load(object sender, EventArgs e)
@@ -68,61 +31,20 @@ namespace Tyuiu.KosovaPA.Task1.V3
             materialButtonEditTeacher_KPA.Enabled = false;
             materialButtonDeleteTeacher_KPA.Enabled = false;
 
-            List<string[]> lines = File.ReadAllLines("Teachers.csv", Encoding.GetEncoding(1251)).Select(t => t.Split(' ')).ToList();
-            foreach (var line in lines)
+            foreach (var item in teachers)
             {
-                if (line[2] == "-")
-                {
-                    if (line[3] == "-")
-                    {
-                        Teacher teacher = new Teacher(line[0], line[1], null, null, Convert.ToInt32(line[4]));
-                        teachers.Add(teacher);
-                    }
-                    else
-                    {
-                        foreach (var dep in departments)
-                        {
-                            if (dep.Name == line[3])
-                            {
-                                Teacher teacher = new Teacher(line[0], line[1], null, dep, Convert.ToInt32(line[4]));
-                                teachers.Add(teacher);
-                                break;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    Subject subject = null;
-                    foreach (var sub in subjects)
-                    {
-                        if (sub.Name == line[2])
-                        {
-                            subject = sub;
-                            break;
-                        }
-                    }
-                    if (line[3] == "-")
-                    {
-                        Teacher teacher = new Teacher(line[0], line[1], subject, null, Convert.ToInt32(line[4]));
-                        teachers.Add(teacher);
-                    }
-                    else
-                    {
-                        foreach (var dep in departments)
-                        {
-                            if (dep.Name == line[3])
-                            {
-                                Teacher teacher = new Teacher(line[0], line[1], subject, dep, Convert.ToInt32(line[4]));
-                                teachers.Add(teacher);
-                                break;
-                            }
-                        }
-                    }
-                }
-                dataGridViewTeachers_KPA.Rows.Add(line[0], line[1], line[2], line[3], line[4]);
+                dataGridViewTeachers_KPA.Rows.Add(item.ToString().Split(' '));
             }
             materialLabelCountTeachers_KPA.Text = "Количество: " + teachers.Count;
+
+            foreach (var item in subjects)
+            {
+                materialComboBoxTeacherSubject_KPA.Items.Add(item.Name);
+            }
+            foreach (var item in departments)
+            {
+                materialComboBoxTeacherDepartment_KPA.Items.Add(item.Name);
+            }
         }
 
         private void materialButtonAddTeacher_KPA_Click(object sender, EventArgs e)
@@ -246,7 +168,6 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void dataGridViewTeachers_KPA_Click(object sender, EventArgs e)
         {
-
             if (dataGridViewTeachers_KPA.CurrentRow.Index == dataGridViewTeachers_KPA.Rows.Count - 1)
             {
                 materialButtonAddTeacher_KPA.Enabled = true;
