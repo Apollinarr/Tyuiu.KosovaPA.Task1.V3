@@ -16,6 +16,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
     {
         List<Department> departments = new List<Department>();
         List<Teacher> teachers = new List<Teacher>();
+        List<Subject> subjects = new List<Subject>();
         public MainForm()
         {
             InitializeComponent();
@@ -96,10 +97,96 @@ namespace Tyuiu.KosovaPA.Task1.V3
             }
         }
 
+        private void UpdateSubjectsList()
+        {
+            List<string[]> lines = File.ReadAllLines("Subjects.csv", Encoding.GetEncoding(1251)).Select(s => s.Split(' ')).ToList();
+            foreach (var line in lines)
+            {
+                bool isExam;
+                if (line[3] == "Экзамен")
+                {
+                    isExam = true;
+                }
+                else
+                {
+                    isExam = false;
+                }
+                Subject subject = new Subject(Convert.ToInt32(line[0]), line[1], Convert.ToInt32(line[2]), isExam);
+                subjects.Add(subject);
+            }
+        }
+
+        private void UpdateTeachersList()
+        {
+            List<string[]> lines = File.ReadAllLines("Teachers.csv", Encoding.GetEncoding(1251)).Select(t => t.Split(' ')).ToList();
+            foreach (var line in lines)
+            {
+                if (line[2] == "-")
+                {
+                    if (line[3] == "-")
+                    {
+                        Teacher teacher = new Teacher(line[0], line[1], null, null, Convert.ToInt32(line[4]));
+                        teachers.Add(teacher);
+                    }
+                    else
+                    {
+                        foreach (var dep in departments)
+                        {
+                            if (dep.Name == line[3])
+                            {
+                                Teacher teacher = new Teacher(line[0], line[1], null, dep, Convert.ToInt32(line[4]));
+                                teachers.Add(teacher);
+                                break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Subject subject = null;
+                    foreach (var sub in subjects)
+                    {
+                        if (sub.Name == line[2])
+                        {
+                            subject = sub;
+                            break;
+                        }
+                    }
+                    if (line[3] == "-")
+                    {
+                        Teacher teacher = new Teacher(line[0], line[1], subject, null, Convert.ToInt32(line[4]));
+                        teachers.Add(teacher);
+                    }
+                    else
+                    {
+                        foreach (var dep in departments)
+                        {
+                            if (dep.Name == line[3])
+                            {
+                                Teacher teacher = new Teacher(line[0], line[1], subject, dep, Convert.ToInt32(line[4]));
+                                teachers.Add(teacher);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         private void предметыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form subjectsForm = new SubjectsForm();
             subjectsForm.ShowDialog();
+            subjects.Clear();
+            UpdateSubjectsList();
+        }
+
+        private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form teachersForm = new TeachersForm();
+            teachersForm.ShowDialog();
+            teachers.Clear();
+            UpdateTeachersList();
         }
     }
 }

@@ -82,6 +82,7 @@
             преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
             преподавателиToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             преподавателиToolStripMenuItem.Text = "Преподаватели";
+            преподавателиToolStripMenuItem.Click += преподавателиToolStripMenuItem_Click;
             // 
             // графикToolStripMenuItem
             // 
