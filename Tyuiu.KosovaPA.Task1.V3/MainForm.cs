@@ -49,6 +49,10 @@ namespace Tyuiu.KosovaPA.Task1.V3
                     byte[] info = new UTF8Encoding(true).GetBytes("");
                 }
             }
+            else
+            {
+                UpdateTeachersList();
+            }
 
             if (!File.Exists("Subjects.csv"))
             {
@@ -57,11 +61,15 @@ namespace Tyuiu.KosovaPA.Task1.V3
                     byte[] info = new UTF8Encoding(true).GetBytes("");
                 }
             }
+            else
+            {
+                UpdateSubjectsList();
+            }
         }
 
         private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form departmnetForm = new DepartmentsForm();
+            Form departmnetForm = new DepartmentsForm(teachers, departments);
             departmnetForm.ShowDialog();
 
             departments.Clear();
@@ -183,7 +191,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form teachersForm = new TeachersForm();
+            Form teachersForm = new TeachersForm(teachers, departments, subjects);
             teachersForm.ShowDialog();
             teachers.Clear();
             UpdateTeachersList();

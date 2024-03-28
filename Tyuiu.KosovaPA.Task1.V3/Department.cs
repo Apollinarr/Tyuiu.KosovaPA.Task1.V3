@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tyuiu.KosovaPA.Task1.V3
 {
-    internal class Department
+    public class Department
     {
         public int Code { get; private set; }
         public string Name { get; private set; }

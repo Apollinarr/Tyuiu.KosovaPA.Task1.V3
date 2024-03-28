@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tyuiu.KosovaPA.Task1.V3
 {
-    internal class Teacher
+    public class Teacher
     {
         public string Name { get; private set; }
         public string Position { get; private set; }

@@ -15,12 +15,14 @@ namespace Tyuiu.KosovaPA.Task1.V3
 {
     public partial class DepartmentsForm : MaterialForm
     {
-        List<Teacher> teachers;
+        List<Teacher> teachers = new List<Teacher>();
         List<Department> departments = new List<Department>();
-        public DepartmentsForm()
+        public DepartmentsForm(List<Teacher> teachers, List<Department> departments)
         {
             InitializeComponent();
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            this.departments = departments;
+            this.teachers = teachers;
         }
 
         private void DepartmentsForm_Load(object sender, EventArgs e)
@@ -29,30 +31,12 @@ namespace Tyuiu.KosovaPA.Task1.V3
             materialButtonEdit_KPA.Enabled = false;
             materialButtonDelete_KPA.Enabled = false;
 
-            List<string[]> lines = File.ReadAllLines("Departments.csv", Encoding.GetEncoding(1251)).Select(d => d.Split(' ')).ToList();
-            foreach (var line in lines)
+            foreach (var item in departments)
             {
-                if (line[2] == "-")
-                {
-                    Department departmnet = new Department(Convert.ToInt32(line[0]), line[1]);
-                    departments.Add(departmnet);
-                }
-                else
-                {
-                    foreach (var teacher in teachers)
-                    {
-                        if (teacher.Name == line[2])
-                        {
-                            Department departmnet = new Department(Convert.ToInt32(line[0]), line[1], teacher);
-                            departments.Add(departmnet);
-                        }
-                    }
-                }
-                dataGridViewDepartmnets_KPA.Rows.Add(line[0], line[1], line[2]);
+                dataGridViewDepartmnets_KPA.Rows.Add(item.ToString().Split(' '));
             }
 
             materialLabelDepCount_KPA.Text = "Количество: " + departments.Count();
-            teachers = new List<Teacher>();
         }
 
         private void materialButtonAddDepartmnet_KPA_Click(object sender, EventArgs e)
@@ -120,6 +104,8 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void dataGridViewDepartmnets_KPA_Click(object sender, EventArgs e)
         {
+            materialComboBoxTeachers_KPA.Items.Clear();
+
             if (dataGridViewDepartmnets_KPA.CurrentRow.Index == dataGridViewDepartmnets_KPA.Rows.Count - 1)
             {
                 materialButtonAddDepartmnet_KPA.Enabled = true;
@@ -127,6 +113,14 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 materialButtonDelete_KPA.Enabled = false;
 
                 ClearAllFields();
+
+                foreach (var t in teachers)
+                {
+                    if (t.Department is null)
+                    {
+                        materialComboBoxTeachers_KPA.Items.Add(t.Name);
+                    }
+                }
             }
             else
             {
@@ -138,10 +132,24 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 materialTextBoxDepartmentName_KPA.Text = dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value.ToString();
                 if (dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value.ToString() != "-")
                 {
-                    materialComboBoxTeachers_KPA.Items.Add(dataGridViewDepartmnets_KPA.CurrentRow.Cells[2].Value.ToString());
+                    foreach (var t in teachers)
+                    {
+                        if (t.Department.Name == dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value.ToString())
+                        {
+                            materialComboBoxTeachers_KPA.Items.Add(t.Name);
+                        }
+                    }
+                    materialComboBoxTeachers_KPA.SelectedIndex = materialComboBoxTeachers_KPA.Items.IndexOf(dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value.ToString());
                 }
                 else
                 {
+                    foreach (var t in teachers)
+                    {
+                        if (t.Department is not null && t.Department.Name == dataGridViewDepartmnets_KPA.CurrentRow.Cells[1].Value.ToString())
+                        {
+                            materialComboBoxTeachers_KPA.Items.Add(t.Name);
+                        }
+                    }
                     materialComboBoxTeachers_KPA.SelectedIndex = -1;
                 }
             }
