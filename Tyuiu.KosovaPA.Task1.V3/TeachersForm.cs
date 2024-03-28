@@ -37,6 +37,29 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 subjects.Add(subject);
                 materialComboBoxTeacherSubject_KPA.Items.Add(subject.Name);
             }
+
+            List<string[]> linesDep = File.ReadAllLines("Departments.csv", Encoding.GetEncoding(1251)).Select(d => d.Split(' ')).ToList();
+            foreach (var line in linesDep)
+            {
+                if (line[2] == "-")
+                {
+                    Department departmnet = new Department(Convert.ToInt32(line[0]), line[1]);
+                    departments.Add(departmnet);
+                    materialComboBoxTeacherDepartment_KPA.Items.Add(departmnet.Name);
+                }
+                else
+                {
+                    foreach (var teacher in teachers)
+                    {
+                        if (teacher.Name == line[2])
+                        {
+                            Department departmnet = new Department(Convert.ToInt32(line[0]), line[1], teacher);
+                            departments.Add(departmnet);
+                            materialComboBoxTeacherDepartment_KPA.Items.Add(departmnet.Name);
+                        }
+                    }
+                }
+            }
         }
 
         private void TeachersForm_Load(object sender, EventArgs e)
@@ -242,7 +265,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 materialTextBoxTeacherPosition_KPA.Text = dataGridViewTeachers_KPA.CurrentRow.Cells[1].Value.ToString();
                 if (dataGridViewTeachers_KPA.CurrentRow.Cells[2].Value.ToString() != "-")
                 {
-                    materialComboBoxTeacherSubject_KPA.Items.Add(dataGridViewTeachers_KPA.CurrentRow.Cells[2].Value.ToString());
+                    materialComboBoxTeacherSubject_KPA.SelectedIndex = materialComboBoxTeacherSubject_KPA.Items.IndexOf(dataGridViewTeachers_KPA.CurrentRow.Cells[2].Value.ToString());
                 }
                 else
                 {
@@ -250,11 +273,11 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 }
                 if (dataGridViewTeachers_KPA.CurrentRow.Cells[3].Value.ToString() != "-")
                 {
-                    materialComboBoxTeacherDepartment_KPA.Items.Add(dataGridViewTeachers_KPA.CurrentRow.Cells[3].Value.ToString());
+                    materialComboBoxTeacherDepartment_KPA.SelectedIndex = materialComboBoxTeacherDepartment_KPA.Items.IndexOf(dataGridViewTeachers_KPA.CurrentRow.Cells[3].Value.ToString());
                 }
                 else
                 {
-                    materialComboBoxTeacherDepartment_KPA.SelectedItem = -1;
+                    materialComboBoxTeacherDepartment_KPA.SelectedIndex = -1;
                 }
                 materialTextBoxTeacherClassroom_KPA.Text = dataGridViewTeachers_KPA.CurrentRow.Cells[4].Value.ToString();
             }
