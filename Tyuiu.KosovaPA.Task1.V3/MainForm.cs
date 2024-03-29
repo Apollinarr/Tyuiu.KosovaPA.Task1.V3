@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +26,17 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!File.Exists("Subjects.csv"))
+            {
+                using (FileStream fs = File.Create("Subjects.csv"))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes("");
+                }
+            }
+            else
+            {
+                UpdateSubjectsList();
+            }
 
             if (!File.Exists("Departments.csv"))
             {
@@ -36,10 +48,6 @@ namespace Tyuiu.KosovaPA.Task1.V3
             else
             {
                 UpdateDepartmentsList();
-                foreach (var dep in departments)
-                {
-                    materialComboBoxDepartment_KPI.Items.Add(dep.Name);
-                }
             }
 
             if (!File.Exists("Teachers.csv"))
@@ -53,18 +61,6 @@ namespace Tyuiu.KosovaPA.Task1.V3
             {
                 UpdateTeachersList();
             }
-
-            if (!File.Exists("Subjects.csv"))
-            {
-                using (FileStream fs = File.Create("Subjects.csv"))
-                {
-                    byte[] info = new UTF8Encoding(true).GetBytes("");
-                }
-            }
-            else
-            {
-                UpdateSubjectsList();
-            }
         }
 
         private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,11 +70,10 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
             departments.Clear();
             UpdateDepartmentsList();
-            materialComboBoxDepartment_KPI.Items.Clear();
-            foreach (var dep in departments)
-            {
-                materialComboBoxDepartment_KPI.Items.Add(dep.Name);
-            }
+            dataGridViewTeachers_KPA.Rows.Clear();
+            materialTextBoxDepartmentCode_KPA.Clear();
+            materialTextBoxDepartmentName_KPA.Clear();
+            materialTextBoxHeadTecher_KPA.Clear();
         }
 
         private void UpdateDepartmentsList()
@@ -102,6 +97,11 @@ namespace Tyuiu.KosovaPA.Task1.V3
                         }
                     }
                 }
+            }
+            materialComboBoxDepartment_KPI.Items.Clear();
+            foreach (var dep in departments)
+            {
+                materialComboBoxDepartment_KPI.Items.Add(dep.Name);
             }
         }
 
@@ -187,6 +187,10 @@ namespace Tyuiu.KosovaPA.Task1.V3
             subjectsForm.ShowDialog();
             subjects.Clear();
             UpdateSubjectsList();
+            dataGridViewTeachers_KPA.Rows.Clear();
+            materialTextBoxDepartmentCode_KPA.Clear();
+            materialTextBoxDepartmentName_KPA.Clear();
+            materialTextBoxHeadTecher_KPA.Clear();
         }
 
         private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,6 +199,62 @@ namespace Tyuiu.KosovaPA.Task1.V3
             teachersForm.ShowDialog();
             teachers.Clear();
             UpdateTeachersList();
+            dataGridViewTeachers_KPA.Rows.Clear();
+            materialTextBoxDepartmentCode_KPA.Clear();
+            materialTextBoxDepartmentName_KPA.Clear();
+            materialTextBoxHeadTecher_KPA.Clear();
+        }
+
+        private void materialComboBoxDepartment_KPI_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewTeachers_KPA.Rows.Clear();
+            List<Teacher> depTeachers = new List<Teacher>();
+            foreach (var item in teachers)
+            {
+                if (item.Department is not null && item.Department.Name == materialComboBoxDepartment_KPI.SelectedItem.ToString())
+                {
+                    depTeachers.Add(item);
+                    //dataGridViewTeachers_KPA.Rows.Add(item.Name.ToString(), item.Classroom.ToString(), item.Position.ToString(), item.Subject.Name.ToString());
+                }
+            }
+            Sort(depTeachers);
+            foreach (var item in depTeachers)
+            {
+                dataGridViewTeachers_KPA.Rows.Add(item.Name.ToString(), item.Classroom.ToString(), item.Position.ToString(), item.Subject.Name.ToString());
+            }
+
+            foreach (var item in departments)
+            {
+                if (item.Name == materialComboBoxDepartment_KPI.SelectedItem.ToString())
+                {
+                    materialTextBoxDepartmentCode_KPA.Text = item.Code.ToString();
+                    materialTextBoxDepartmentName_KPA.Text = item.Name.ToString();
+                    if (item.HeadTeacher is not null)
+                    {
+                        materialTextBoxHeadTecher_KPA.Text = item.HeadTeacher.Name.ToString();
+                    }
+                    else
+                    {
+                        materialTextBoxHeadTecher_KPA.Text = "-";
+                    }
+                }
+            }
+        }
+
+        private void Sort(List<Teacher> depTeachers)
+        {
+            for (int i = 1; i < depTeachers.Count; i++)
+            {
+                for (int j = 0; j < depTeachers.Count - 1; j++)
+                {
+                    if (depTeachers[j].Classroom > depTeachers[j + 1].Classroom)
+                    {
+                        Teacher temp = depTeachers[j];
+                        depTeachers[j] = depTeachers[j + 1];
+                        depTeachers[j + 1] = temp;
+                    }
+                }
+            }
         }
     }
 }
