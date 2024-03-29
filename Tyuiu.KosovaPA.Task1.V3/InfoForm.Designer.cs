@@ -106,6 +106,7 @@
             Controls.Add(flowLayoutPanelDescription_KPA);
             Controls.Add(labelName_KPA);
             Name = "InfoForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "О программе";
             Load += InfoForm_Load;
             flowLayoutPanelDescription_KPA.ResumeLayout(false);

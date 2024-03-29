@@ -270,6 +270,7 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "DepartmentsForm";
             Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Кафедры";
             Load += DepartmentsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewDepartmnets_KPA).EndInit();

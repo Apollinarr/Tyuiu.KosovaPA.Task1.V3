@@ -355,6 +355,7 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "TeachersForm";
             Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Преподаватели";
             Load += TeachersForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeachers_KPA).EndInit();

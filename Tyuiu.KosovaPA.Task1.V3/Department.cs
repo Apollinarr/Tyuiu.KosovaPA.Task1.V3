@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tyuiu.KosovaPA.Task1.V3
+﻿namespace Tyuiu.KosovaPA.Task1.V3
 {
     public class Department
     {

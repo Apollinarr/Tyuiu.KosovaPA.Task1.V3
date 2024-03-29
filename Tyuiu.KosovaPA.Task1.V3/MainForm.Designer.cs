@@ -281,6 +281,7 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "MainForm";
             Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
