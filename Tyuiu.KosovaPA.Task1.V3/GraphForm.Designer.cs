@@ -62,6 +62,7 @@
             ClientSize = new System.Drawing.Size(913, 577);
             Controls.Add(chartTeachers_KPA);
             Name = "GraphForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Кафедры";
             Load += GraphForm_Load;
             ((System.ComponentModel.ISupportInitialize)chartTeachers_KPA).EndInit();

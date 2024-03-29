@@ -1,14 +1,10 @@
 ﻿using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tyuiu.KosovaPA.Task1.V3
@@ -214,7 +210,6 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 if (item.Department is not null && item.Department.Name == materialComboBoxDepartment_KPI.SelectedItem.ToString())
                 {
                     depTeachers.Add(item);
-                    //dataGridViewTeachers_KPA.Rows.Add(item.Name.ToString(), item.Classroom.ToString(), item.Position.ToString(), item.Subject.Name.ToString());
                 }
             }
             Sort(depTeachers);

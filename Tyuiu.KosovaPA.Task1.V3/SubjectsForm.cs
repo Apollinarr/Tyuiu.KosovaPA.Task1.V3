@@ -1,14 +1,10 @@
 ﻿using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tyuiu.KosovaPA.Task1.V3

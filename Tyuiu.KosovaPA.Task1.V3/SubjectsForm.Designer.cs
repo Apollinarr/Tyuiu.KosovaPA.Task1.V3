@@ -309,6 +309,7 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "SubjectsForm";
             Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Предмет";
             Load += SubjectsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewSubjects_KPA).EndInit();
