@@ -256,5 +256,11 @@ namespace Tyuiu.KosovaPA.Task1.V3
                 }
             }
         }
+
+        private void графикToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form graphForm = new GraphForm(departments, teachers);
+            graphForm.ShowDialog();
+        }
     }
 }
