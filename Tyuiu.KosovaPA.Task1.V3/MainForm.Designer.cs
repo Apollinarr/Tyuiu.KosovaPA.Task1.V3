@@ -93,6 +93,7 @@
             графикToolStripMenuItem.Name = "графикToolStripMenuItem";
             графикToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             графикToolStripMenuItem.Text = "График";
+            графикToolStripMenuItem.Click += графикToolStripMenuItem_Click;
             // 
             // materialComboBoxDepartment_KPI
             // 

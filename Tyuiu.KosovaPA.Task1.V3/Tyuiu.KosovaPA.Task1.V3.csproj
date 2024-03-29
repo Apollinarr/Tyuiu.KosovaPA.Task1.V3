@@ -11,10 +11,6 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="GraphForm.cs" />
-    <Compile Remove="GraphForm.Designer.cs" />
-    <EmbeddedResource Remove="GraphForm.resx" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>
 </Project>

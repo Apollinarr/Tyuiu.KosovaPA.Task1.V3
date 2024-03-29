@@ -28,20 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            chartTeachers_KPA = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)chartTeachers_KPA).BeginInit();
+            SuspendLayout();
+            // 
+            // chartTeachers_KPA
+            // 
+            chartArea1.Name = "ChartArea1";
+            chartTeachers_KPA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartTeachers_KPA.Legends.Add(legend1);
+            chartTeachers_KPA.Location = new System.Drawing.Point(100, 113);
+            chartTeachers_KPA.Name = "chartTeachers_KPA";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Кафедры";
+            chartTeachers_KPA.Series.Add(series1);
+            chartTeachers_KPA.Size = new System.Drawing.Size(661, 375);
+            chartTeachers_KPA.TabIndex = 0;
+            chartTeachers_KPA.Text = "chart1";
+            title1.Name = "Преподаватели по кафедрам";
+            title1.Text = "Преподаватели по кафедрам";
+            chartTeachers_KPA.Titles.Add(title1);
             // 
             // GraphForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "GraphForm";
-            this.Text = "GraphForm";
-            this.Load += new System.EventHandler(this.GraphForm_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(913, 577);
+            Controls.Add(chartTeachers_KPA);
+            Name = "GraphForm";
+            Text = "Кафедры";
+            Load += GraphForm_Load;
+            ((System.ComponentModel.ISupportInitialize)chartTeachers_KPA).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTeachers_KPA;
     }
 }
