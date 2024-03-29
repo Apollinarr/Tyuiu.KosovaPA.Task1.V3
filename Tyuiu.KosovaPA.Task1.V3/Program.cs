@@ -16,7 +16,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
