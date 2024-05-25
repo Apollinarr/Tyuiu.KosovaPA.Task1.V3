@@ -50,6 +50,7 @@
             // 
             // dataGridViewSubjects_KPA
             // 
+            dataGridViewSubjects_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             dataGridViewSubjects_KPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewSubjects_KPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColumnCode, ColumnName, ColumnHourse, ColumnIsExam });
             dataGridViewSubjects_KPA.Location = new System.Drawing.Point(21, 122);
@@ -105,6 +106,7 @@
             // 
             // materialTextBoxCodeSubject_KPA
             // 
+            materialTextBoxCodeSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialTextBoxCodeSubject_KPA.AnimateReadOnly = false;
             materialTextBoxCodeSubject_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             materialTextBoxCodeSubject_KPA.Depth = 0;
@@ -123,6 +125,7 @@
             // 
             // materialTextBoxNameSubject_KPA
             // 
+            materialTextBoxNameSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialTextBoxNameSubject_KPA.AnimateReadOnly = false;
             materialTextBoxNameSubject_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             materialTextBoxNameSubject_KPA.Depth = 0;
@@ -141,6 +144,7 @@
             // 
             // materialTextBoxHoursSubject_KPA
             // 
+            materialTextBoxHoursSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialTextBoxHoursSubject_KPA.AnimateReadOnly = false;
             materialTextBoxHoursSubject_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             materialTextBoxHoursSubject_KPA.Depth = 0;
@@ -159,6 +163,7 @@
             // 
             // materialComboBoxIsExamSubject_KPA
             // 
+            materialComboBoxIsExamSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialComboBoxIsExamSubject_KPA.AutoResize = false;
             materialComboBoxIsExamSubject_KPA.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
             materialComboBoxIsExamSubject_KPA.Depth = 0;
@@ -182,6 +187,7 @@
             // 
             // materialLabelCodeSubject_KPA
             // 
+            materialLabelCodeSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelCodeSubject_KPA.AutoSize = true;
             materialLabelCodeSubject_KPA.Depth = 0;
             materialLabelCodeSubject_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -194,6 +200,7 @@
             // 
             // materialLabelNameSubject_KPA
             // 
+            materialLabelNameSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelNameSubject_KPA.AutoSize = true;
             materialLabelNameSubject_KPA.Depth = 0;
             materialLabelNameSubject_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -206,6 +213,7 @@
             // 
             // materialLabelHourseSubject_KPA
             // 
+            materialLabelHourseSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelHourseSubject_KPA.AutoSize = true;
             materialLabelHourseSubject_KPA.Depth = 0;
             materialLabelHourseSubject_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -218,6 +226,7 @@
             // 
             // materialLabelisExamSubject_KPA
             // 
+            materialLabelisExamSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelisExamSubject_KPA.AutoSize = true;
             materialLabelisExamSubject_KPA.Depth = 0;
             materialLabelisExamSubject_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -230,6 +239,7 @@
             // 
             // materialButtonAddSubject_KPA
             // 
+            materialButtonAddSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             materialButtonAddSubject_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             materialButtonAddSubject_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButtonAddSubject_KPA.Depth = 0;
@@ -250,6 +260,7 @@
             // 
             // materialButtonDeleteSubject_KPA
             // 
+            materialButtonDeleteSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             materialButtonDeleteSubject_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             materialButtonDeleteSubject_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButtonDeleteSubject_KPA.Depth = 0;
@@ -270,6 +281,7 @@
             // 
             // materialButtonEditSubject_KPA
             // 
+            materialButtonEditSubject_KPA.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             materialButtonEditSubject_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             materialButtonEditSubject_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButtonEditSubject_KPA.Depth = 0;
@@ -307,6 +319,7 @@
             Controls.Add(materialLabelCount_KPA);
             Controls.Add(dataGridViewSubjects_KPA);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "SubjectsForm";
             Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -38,6 +38,7 @@
             // 
             // chartTeachers_KPA
             // 
+            chartTeachers_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             chartArea1.Name = "ChartArea1";
             chartTeachers_KPA.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -61,6 +62,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(913, 577);
             Controls.Add(chartTeachers_KPA);
+            MaximizeBox = false;
             Name = "GraphForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Кафедры";

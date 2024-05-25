@@ -117,4 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelDescriptoin_KPA.Text" xml:space="preserve">
+    <value>Программа предназначена для учета преподаветелей, кафедр и дисциплин, которые ведут преподаватели. Имеется возможность ввода данных, назначения заведующих кафедр, присвоения дисциплин преподавателям.
+В программе реализован функционал добавления, изменения и удаления данных. Данные хранятся в csv файле.</value>
+  </data>
 </root>

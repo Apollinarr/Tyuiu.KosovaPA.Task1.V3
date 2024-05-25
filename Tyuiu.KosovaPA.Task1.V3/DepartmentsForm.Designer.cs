@@ -47,6 +47,7 @@
             // 
             // dataGridViewDepartmnets_KPA
             // 
+            dataGridViewDepartmnets_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             dataGridViewDepartmnets_KPA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewDepartmnets_KPA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColumnCode, ColumnName, HeadTeacher });
             dataGridViewDepartmnets_KPA.Location = new System.Drawing.Point(42, 136);
@@ -84,6 +85,7 @@
             // 
             // materialTextBoxCodeDepartment_KPA
             // 
+            materialTextBoxCodeDepartment_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialTextBoxCodeDepartment_KPA.AnimateReadOnly = false;
             materialTextBoxCodeDepartment_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             materialTextBoxCodeDepartment_KPA.Depth = 0;
@@ -103,6 +105,7 @@
             // 
             // materialTextBoxDepartmentName_KPA
             // 
+            materialTextBoxDepartmentName_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialTextBoxDepartmentName_KPA.AnimateReadOnly = false;
             materialTextBoxDepartmentName_KPA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             materialTextBoxDepartmentName_KPA.Depth = 0;
@@ -122,6 +125,7 @@
             // 
             // materialComboBoxTeachers_KPA
             // 
+            materialComboBoxTeachers_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialComboBoxTeachers_KPA.AutoResize = false;
             materialComboBoxTeachers_KPA.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
             materialComboBoxTeachers_KPA.Depth = 0;
@@ -145,6 +149,7 @@
             // 
             // materialButtonAddDepartmnet_KPA
             // 
+            materialButtonAddDepartmnet_KPA.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             materialButtonAddDepartmnet_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             materialButtonAddDepartmnet_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButtonAddDepartmnet_KPA.Depth = 0;
@@ -165,6 +170,7 @@
             // 
             // materialLabelCode_KPA
             // 
+            materialLabelCode_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelCode_KPA.AutoSize = true;
             materialLabelCode_KPA.Depth = 0;
             materialLabelCode_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -177,6 +183,7 @@
             // 
             // materialLabelName_KPA
             // 
+            materialLabelName_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelName_KPA.AutoSize = true;
             materialLabelName_KPA.Depth = 0;
             materialLabelName_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -189,6 +196,7 @@
             // 
             // materialLabelHeadTeacher_KPA
             // 
+            materialLabelHeadTeacher_KPA.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             materialLabelHeadTeacher_KPA.AutoSize = true;
             materialLabelHeadTeacher_KPA.Depth = 0;
             materialLabelHeadTeacher_KPA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -201,6 +209,7 @@
             // 
             // materialButtonDelete_KPA
             // 
+            materialButtonDelete_KPA.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             materialButtonDelete_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             materialButtonDelete_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButtonDelete_KPA.Depth = 0;
@@ -221,6 +230,7 @@
             // 
             // materialButtonEdit_KPA
             // 
+            materialButtonEdit_KPA.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             materialButtonEdit_KPA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             materialButtonEdit_KPA.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButtonEdit_KPA.Depth = 0;
@@ -268,6 +278,7 @@
             Controls.Add(materialTextBoxCodeDepartment_KPA);
             Controls.Add(dataGridViewDepartmnets_KPA);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "DepartmentsForm";
             Padding = new System.Windows.Forms.Padding(3, 80, 3, 4);
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

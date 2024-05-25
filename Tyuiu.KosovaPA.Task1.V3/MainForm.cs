@@ -74,6 +74,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void UpdateDepartmentsList()
         {
+            departments.Clear();
             List<string[]> lines = File.ReadAllLines("Departments.csv", Encoding.GetEncoding(1251)).Select(d => d.Split(' ')).ToList();
             foreach (var line in lines)
             {
@@ -103,6 +104,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void UpdateSubjectsList()
         {
+            subjects.Clear();
             List<string[]> lines = File.ReadAllLines("Subjects.csv", Encoding.GetEncoding(1251)).Select(s => s.Split(' ')).ToList();
             foreach (var line in lines)
             {
@@ -122,6 +124,7 @@ namespace Tyuiu.KosovaPA.Task1.V3
 
         private void UpdateTeachersList()
         {
+            teachers.Clear();
             List<string[]> lines = File.ReadAllLines("Teachers.csv", Encoding.GetEncoding(1251)).Select(t => t.Split(' ')).ToList();
             foreach (var line in lines)
             {
